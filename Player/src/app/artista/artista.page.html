@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <ion-title>Artistas relacionados</ion-title>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of artist">
+        <ion-card (click)="openInfo(item.name,item.img)">
+          <img [src]="item.img">
+          <ion-label>{{item.name}}</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

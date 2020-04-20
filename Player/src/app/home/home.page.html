@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-title>Basic Player</ion-title>
+  <br>
+  <ion-title>Géneros</ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of genre">
+        <ion-card (click)=openArtista(item.name)>
+          <img [src]="item.img"> <br>
+          <ion-label>{{item.name}}</ion-label>
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

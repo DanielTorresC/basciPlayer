@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img [src]="img">    
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{review}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-title>Algunas Canciones</ion-title>
+    <ion-list *ngFor="let items of description" >
+      <ion-item button (click)="start(items)">
+        <ion-img [src]="items.album" ></ion-img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-label [color]="items == activeTrack ? 'warning' : 'dark'">{{items.name}}</ion-label><br><br>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  
+</ion-content>
+
+
+<ion-footer *ngIf="activeTrack" >
+
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        {{activeTrack.name}}
+      </ion-col>
+      <ion-col size="12">
+        <ion-range #range [(ngModel)]="progress" max="100" color="warning" (touchend)="seek()" (mouseup)="seek()"></ion-range>
+      </ion-col >
+      <ion-col size="12" class="ion-text-center">
+        
+        <ion-button fill="clear" (click)="prev()" color="warning">
+          <ion-icon size="large" name="play-back-circle" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying" color="warning">
+          <ion-icon size="large" name="play-circle" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="togglePlayer(true)" color="warning" *ngIf="isPlaying">
+          <ion-icon size="large" name="pause-circle" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="next()" color="warning">
+          <ion-icon size="large" name="play-forward-circle" slot="icon-only" ></ion-icon>
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-footer>
