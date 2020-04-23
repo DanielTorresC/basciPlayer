@@ -396,6 +396,132 @@ export class InfoPage implements OnInit {
       ];
       break;
 
+      case 'Bob Marley':
+
+      this.review = 'Robert Nesta Marley, más conocido como Bob Marley (Nine Mile, Saint Ann, Jamaica, 6 de febrero de 1945-Miami, Florida, Estados Unidos, 11 de mayo de 1981), fue un músico, guitarrista y compositor jamaicano. Durante su carrera musical fue el líder, compositor y guitarrista de las bandas The Wailers (1964-1974) y Bob Marley & The Wailers (1974-1980). '
+
+      this.description=[
+        {
+          name:'Jammin',
+          album:'assets/img/jamming.jpg',
+          song:'assets/audio/jammin.mp3',
+        },{
+          name:'No Women No Cry',
+          album:'assets/img/rastaman.jpg',
+          song:'assets/audio/no-cry.mp3'
+        },{
+          name:'Is This Love',
+          album:'assets/img/kaya.jpg',
+          song:'assets/audio/is-this-love.mp3'
+        }
+      ];
+      break;
+
+      case 'UB40':
+
+      this.review = 'UB40 es un grupo inglés de música pop reggae y dub formado en Birmingham, Inglaterra, en 1978. Grupo multirracial que destacó por su compromiso social y político en sus primeros tiempos. La formación (cuyo nombre fue tomado de un formulario oficial para el subsidio de desempleo) tuvo su origen en la ciudad de Birmingham, donde residían los hermanos Alastair Campbell (1959) y Robin Campbell (1954). Ambos procedían de una familia con tradición musical (sus padres eran cantantes de folk). El grupo se formó hacia 1978, con Jim Brown (1957) Earl Falconer (1959) y Brian Travers (1959).'
+
+      this.description=[
+        {
+          name:'Red Red Wine',
+          album:'assets/img/lol.jpg',
+          song:'assets/audio/red-red-wine.mp3',
+        },{
+          name:'Imposible Love',
+          album:'assets/img/impossible-love.jpg',
+          song:'assets/audio/impossible-love.mp3'
+        },{
+          name:'Kingston Town',
+          album:'assets/img/ghits.jpg',
+          song:'assets/audio/kingston-town.mp3'
+        }
+      ];
+      break;
+
+      case 'Cultura Profética':
+
+      this.review = 'Cultura Profética es una banda de reggae originaria de Puerto Rico que hizo su debut en 1996. Son reconocidos por su particular estilo con toques de roots reggae, así como por sus tributos a Bob Marley.'
+
+      this.description=[
+        {
+          name:'Ilegal',
+          album:'assets/img/ilegal.jpg',
+          song:'assets/audio/ilegal.mp3',
+        },{
+          name:'La Complicidad',
+          album:'assets/img/la-complicidad.jpg',
+          song:'assets/audio/la-complicidad.mp3'
+        },{
+          name:'Saca Prende Y Sorprende',
+          album:'assets/img/saca-prende-sorprende.jpg',
+          song:'assets/audio/saca-prende-sorprende.mp3'
+        }
+      ];
+      break;
+
+      case 'Dread Mar I':
+
+      this.review = 'Mariano Javier Castro (Lanús, 31 de enero de 1978),​ conocido artísticamente como Dread Mar-I, es un cantante argentino de reggae en español. Comenzó su carrera solista bajo el nombre Dread Mar-I en 2005 después de varios años como vocalista de Mensajeros Reggae. En abril de ese año editó su primer disco, Jah guía. La canción «Inspiración», que formó parte del mismo, fue la cortina musical del programa de ESPN Gravedad Zero.'
+
+      this.description=[
+        {
+          name:'Tú Sin Mi',
+          album:'assets/img/vivi-en-do.jpg',
+          song:'assets/audio/tu-sin-mi.mp3',
+        },{
+          name:'Hoja En Blanco',
+          album:'assets/img/10-anos.jpg',
+          song:'assets/audio/hoja-en-blanco.mp3'
+        },{
+          name:'Sálvame',
+          album:'assets/img/amor-es.jpg',
+          song:'assets/audio/salvame.mp3'
+        }
+      ];
+      break;
+
+      case 'Damian Marley':
+
+      this.review = 'Damian Robert Nesta «Jr. Gong» Marley (Kingston, Jamaica, 21 de julio de 1978) es un músico jamaicano, ganador de tres premios Grammy, y artista de roots reggae y dancehall. Es uno de los hijos menores de Bob Marley y el único hijo que tuvo con Cindy Breakspeare, Miss Mundo de 1976. Su apodo es Junior Gong, derivación del de su padre, Tuff Gong.'
+
+      this.description=[
+        {
+          name:'Road To Zion',
+          album:'assets/img/welcome-to-jamrock.jpg',
+          song:'assets/audio/road-to-zion.mp3',
+        },{
+          name:'Medication',
+          album:'assets/img/stony-hill.jpg',
+          song:'assets/audio/medication.mp3'
+        },{
+          name:'Patience',
+          album:'assets/img/distant-relatives.jpg',
+          song:'assets/audio/patience.mp3'
+        }
+      ];
+      break;
+
+      case 'Los Cafres':
+
+      this.review = 'Los Cafres es una banda argentina de reggae, formada a fines de 1987. El grupo logró reconocimiento popular a mediados de la década de los \'90, con la edición de su primer disco, Frecuencia Cafre. El término «cafre» proviene del adjetivo árabe "kafir" (en árabe, كافر kāfir, en plural كفّار kuffār), que en primera instancia significa "infiel" y que luego fue variando su significado hacia "brutal en el más alto grado"; acepción del término con el que la banda elige identificarse. '
+
+      this.description=[
+        {
+          name:'Tus Ojos',
+          album:'assets/img/suena-la-alarma.jpg',
+          song:'assets/audio/tus-ojos.mp3',
+        },{
+          name:'Casi q\' Me Pierdo',
+          album:'assets/img/paso-gigante.jpg',
+          song:'assets/audio/casi-q-me-pierdo.mp3'
+        },{
+          name:'Sigo Caminando',
+          album:'assets/img/alas-canciones.jpg',
+          song:'assets/audio/sigo-caminando.mp3'
+        }
+      ];
+      break;
+
       default:
         break;
     }
@@ -406,6 +532,12 @@ export class InfoPage implements OnInit {
   isPlaying = false;
   progress = 0;
   @ViewChild('range', {static: false}) range: IonRange;
+
+  stop(){
+    if(this.player){
+      this.player.stop();
+    }
+  }
 
   start(items){
 

@@ -108,8 +108,8 @@ export class ArtistaPage implements OnInit {
             name: 'Cultura Profética',
             img: 'assets/img/cultura_profetica.jpg'
           },{
-            name: 'Peter Tosh',
-            img: 'assets/img/peter_tosh.jpg'
+            name: 'Dread Mar I',
+            img: 'assets/img/dread.jpg'
           },{
             name: 'Damian Marley',
             img: 'assets/img/damian_marley.jpg'
